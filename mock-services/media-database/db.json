@@ -1,0 +1,355 @@
+{
+  "channels": [
+    {
+      "id": "ch_001",
+      "name": "TechTV Network",
+      "description": "Technology and innovation broadcasting",
+      "type": "live",
+      "status": "active",
+      "streamKey": "live_tech_stream_key_abc123",
+      "rtmpUrl": "rtmp://streaming.example.com/live",
+      "hlsUrl": "http://localhost:3004/live/techTV/playlist.m3u8",
+      "thumbnailUrl": "http://localhost:3004/thumbnails/techTV.jpg",
+      "viewerCount": 15234,
+      "resolution": "1920x1080",
+      "bitrate": 6000,
+      "fps": 60,
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-20T14:30:00Z"
+    },
+    {
+      "id": "ch_002",
+      "name": "Sports Arena Live",
+      "description": "24/7 sports coverage and analysis",
+      "type": "live",
+      "status": "active",
+      "streamKey": "live_sports_stream_key_xyz789",
+      "rtmpUrl": "rtmp://streaming.example.com/sports",
+      "hlsUrl": "http://localhost:3004/live/sportsArena/playlist.m3u8",
+      "thumbnailUrl": "http://localhost:3004/thumbnails/sports.jpg",
+      "viewerCount": 48921,
+      "resolution": "3840x2160",
+      "bitrate": 15000,
+      "fps": 60,
+      "createdAt": "2023-11-20T08:00:00Z",
+      "updatedAt": "2024-01-20T14:35:00Z"
+    },
+    {
+      "id": "ch_003",
+      "name": "Music Vibes",
+      "description": "Non-stop music and artist interviews",
+      "type": "live",
+      "status": "offline",
+      "streamKey": "live_music_stream_key_def456",
+      "rtmpUrl": "rtmp://streaming.example.com/music",
+      "hlsUrl": "http://localhost:3004/live/musicVibes/playlist.m3u8",
+      "thumbnailUrl": "http://localhost:3004/thumbnails/music.jpg",
+      "viewerCount": 0,
+      "resolution": "1920x1080",
+      "bitrate": 5000,
+      "fps": 30,
+      "createdAt": "2024-01-10T12:00:00Z",
+      "updatedAt": "2024-01-19T22:00:00Z"
+    }
+  ],
+  "broadcasts": [
+    {
+      "id": "br_001",
+      "channelId": "ch_001",
+      "title": "CES 2024 Keynote Coverage",
+      "description": "Live coverage of the biggest tech announcements",
+      "status": "live",
+      "startedAt": "2024-01-20T13:00:00Z",
+      "scheduledEndAt": "2024-01-20T16:00:00Z",
+      "actualEndAt": null,
+      "currentViewers": 15234,
+      "peakViewers": 23451,
+      "totalViews": 45678,
+      "duration": 5400,
+      "thumbnailUrl": "http://localhost:3004/broadcasts/br_001_thumb.jpg",
+      "tags": ["tech", "ces", "innovation", "keynote"],
+      "language": "en",
+      "region": "US"
+    },
+    {
+      "id": "br_002",
+      "channelId": "ch_002",
+      "title": "NBA Finals Game 7",
+      "description": "The championship deciding game",
+      "status": "live",
+      "startedAt": "2024-01-20T14:00:00Z",
+      "scheduledEndAt": "2024-01-20T17:00:00Z",
+      "actualEndAt": null,
+      "currentViewers": 48921,
+      "peakViewers": 52340,
+      "totalViews": 89234,
+      "duration": 3600,
+      "thumbnailUrl": "http://localhost:3004/broadcasts/br_002_thumb.jpg",
+      "tags": ["sports", "nba", "basketball", "finals"],
+      "language": "en",
+      "region": "US"
+    },
+    {
+      "id": "br_003",
+      "channelId": "ch_001",
+      "title": "AI Workshop: Building with LLMs",
+      "description": "Hands-on tutorial for developers",
+      "status": "completed",
+      "startedAt": "2024-01-19T10:00:00Z",
+      "scheduledEndAt": "2024-01-19T12:00:00Z",
+      "actualEndAt": "2024-01-19T12:15:00Z",
+      "currentViewers": 0,
+      "peakViewers": 8923,
+      "totalViews": 12456,
+      "duration": 8100,
+      "thumbnailUrl": "http://localhost:3004/broadcasts/br_003_thumb.jpg",
+      "vodUrl": "http://localhost:3004/vod/br_003/master.m3u8",
+      "tags": ["tech", "ai", "tutorial", "workshop"],
+      "language": "en",
+      "region": "GLOBAL"
+    }
+  ],
+  "streams": [
+    {
+      "id": "st_001",
+      "broadcastId": "br_001",
+      "channelId": "ch_001",
+      "protocol": "RTMP",
+      "ingestUrl": "rtmp://ingest.example.com/live/tech_stream_key_abc123",
+      "playbackUrls": {
+        "hls": "http://localhost:3004/live/techTV/playlist.m3u8",
+        "dash": "http://localhost:3004/live/techTV/manifest.mpd",
+        "rtmp": "rtmp://streaming.example.com/live/techTV"
+      },
+      "quality": {
+        "resolution": "1920x1080",
+        "bitrate": 6000,
+        "fps": 60,
+        "codec": "H.264"
+      },
+      "health": {
+        "status": "healthy",
+        "latency": 2.3,
+        "bufferHealth": 95,
+        "droppedFrames": 12,
+        "networkJitter": 1.2
+      },
+      "startedAt": "2024-01-20T13:00:00Z"
+    },
+    {
+      "id": "st_002",
+      "broadcastId": "br_002",
+      "channelId": "ch_002",
+      "protocol": "SRT",
+      "ingestUrl": "srt://ingest.example.com:9998?streamid=sports_xyz789",
+      "playbackUrls": {
+        "hls": "http://localhost:3004/live/sportsArena/playlist.m3u8",
+        "dash": "http://localhost:3004/live/sportsArena/manifest.mpd"
+      },
+      "quality": {
+        "resolution": "3840x2160",
+        "bitrate": 15000,
+        "fps": 60,
+        "codec": "H.265"
+      },
+      "health": {
+        "status": "healthy",
+        "latency": 1.8,
+        "bufferHealth": 98,
+        "droppedFrames": 3,
+        "networkJitter": 0.8
+      },
+      "startedAt": "2024-01-20T14:00:00Z"
+    }
+  ],
+  "analytics": [
+    {
+      "id": "an_001",
+      "broadcastId": "br_001",
+      "timestamp": "2024-01-20T14:30:00Z",
+      "metrics": {
+        "currentViewers": 15234,
+        "peakViewers": 23451,
+        "averageViewDuration": 1847,
+        "totalWatchTime": 28156920,
+        "engagementRate": 0.78,
+        "chatMessages": 4523,
+        "likes": 892,
+        "shares": 234
+      },
+      "demographics": {
+        "regions": {
+          "US": 45,
+          "EU": 30,
+          "ASIA": 18,
+          "OTHER": 7
+        },
+        "devices": {
+          "mobile": 52,
+          "desktop": 35,
+          "tv": 10,
+          "tablet": 3
+        },
+        "platforms": {
+          "web": 48,
+          "ios": 28,
+          "android": 20,
+          "smartTV": 4
+        }
+      },
+      "quality": {
+        "averageBitrate": 5800,
+        "bufferingRate": 0.02,
+        "startupTime": 1.2,
+        "rebufferCount": 0.3
+      }
+    },
+    {
+      "id": "an_002",
+      "broadcastId": "br_002",
+      "timestamp": "2024-01-20T15:00:00Z",
+      "metrics": {
+        "currentViewers": 48921,
+        "peakViewers": 52340,
+        "averageViewDuration": 2340,
+        "totalWatchTime": 114515340,
+        "engagementRate": 0.85,
+        "chatMessages": 15234,
+        "likes": 3421,
+        "shares": 891
+      },
+      "demographics": {
+        "regions": {
+          "US": 68,
+          "CA": 12,
+          "MX": 8,
+          "OTHER": 12
+        },
+        "devices": {
+          "tv": 45,
+          "mobile": 38,
+          "desktop": 15,
+          "tablet": 2
+        },
+        "platforms": {
+          "smartTV": 45,
+          "ios": 20,
+          "android": 18,
+          "web": 17
+        }
+      },
+      "quality": {
+        "averageBitrate": 14200,
+        "bufferingRate": 0.01,
+        "startupTime": 1.5,
+        "rebufferCount": 0.1
+      }
+    }
+  ],
+  "recordings": [
+    {
+      "id": "rec_001",
+      "broadcastId": "br_003",
+      "channelId": "ch_001",
+      "title": "AI Workshop: Building with LLMs",
+      "status": "completed",
+      "duration": 8100,
+      "fileSize": 4523456789,
+      "format": "mp4",
+      "resolution": "1920x1080",
+      "vodUrl": "http://localhost:3004/vod/br_003/master.m3u8",
+      "downloadUrl": "http://localhost:3004/downloads/br_003.mp4",
+      "thumbnailUrl": "http://localhost:3004/vod/br_003_thumb.jpg",
+      "previewClips": [
+        "http://localhost:3004/vod/br_003_preview_1.mp4",
+        "http://localhost:3004/vod/br_003_preview_2.mp4",
+        "http://localhost:3004/vod/br_003_preview_3.mp4"
+      ],
+      "chapters": [
+        {
+          "title": "Introduction to LLMs",
+          "startTime": 0,
+          "endTime": 900
+        },
+        {
+          "title": "Setting up your environment",
+          "startTime": 900,
+          "endTime": 2700
+        },
+        {
+          "title": "Building your first agent",
+          "startTime": 2700,
+          "endTime": 5400
+        },
+        {
+          "title": "Q&A Session",
+          "startTime": 5400,
+          "endTime": 8100
+        }
+      ],
+      "createdAt": "2024-01-19T12:20:00Z",
+      "views": 3452
+    }
+  ],
+  "scheduledBroadcasts": [
+    {
+      "id": "sch_001",
+      "channelId": "ch_001",
+      "title": "Weekly Tech Roundup",
+      "description": "Review of the week's biggest tech news",
+      "scheduledStart": "2024-01-21T18:00:00Z",
+      "estimatedDuration": 3600,
+      "status": "scheduled",
+      "thumbnailUrl": "http://localhost:3004/scheduled/sch_001_thumb.jpg",
+      "tags": ["tech", "news", "weekly"],
+      "notificationsSent": 8934,
+      "expectedViewers": 12000
+    },
+    {
+      "id": "sch_002",
+      "channelId": "ch_002",
+      "title": "Premier League: Arsenal vs Manchester City",
+      "description": "Top of the table clash",
+      "scheduledStart": "2024-01-22T15:00:00Z",
+      "estimatedDuration": 7200,
+      "status": "scheduled",
+      "thumbnailUrl": "http://localhost:3004/scheduled/sch_002_thumb.jpg",
+      "tags": ["sports", "soccer", "premier-league"],
+      "notificationsSent": 45231,
+      "expectedViewers": 65000
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alert_001",
+      "channelId": "ch_001",
+      "broadcastId": "br_001",
+      "type": "performance",
+      "severity": "warning",
+      "message": "Bitrate dropped below threshold",
+      "details": {
+        "currentBitrate": 4500,
+        "threshold": 5000,
+        "duration": 23
+      },
+      "timestamp": "2024-01-20T14:25:00Z",
+      "resolved": true,
+      "resolvedAt": "2024-01-20T14:26:00Z"
+    },
+    {
+      "id": "alert_002",
+      "channelId": "ch_002",
+      "broadcastId": "br_002",
+      "type": "viewer_surge",
+      "severity": "info",
+      "message": "Viewer count increased by 50% in last 5 minutes",
+      "details": {
+        "previousCount": 32000,
+        "currentCount": 48921,
+        "percentageIncrease": 52.88
+      },
+      "timestamp": "2024-01-20T14:55:00Z",
+      "resolved": false
+    }
+  ]
+}

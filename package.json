@@ -1,0 +1,32 @@
+{
+  "name": "media-agent",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Media Agent - AI Assistant with MCP Tool Integration",
+  "scripts": {
+    "dev": "concurrently --handle-input --kill-others-on-fail -n web,api,broadcast-mcp,analytics-mcp,mocks -c blue,green,yellow,magenta,cyan \"pnpm --filter web dev\" \"pnpm --filter api dev\" \"pnpm --filter broadcasting-mcp dev\" \"pnpm --filter analytics_mcp dev\" \"pnpm --filter mock-services dev\"",
+    "build": "pnpm -r build",
+    "start": "pnpm -r --parallel start",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "clean": "pnpm -r clean && rm -rf node_modules"
+  },
+  "keywords": [
+    "ai",
+    "assistant",
+    "mcp",
+    "model-context-protocol",
+    "ollama",
+    "langchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.28.2",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

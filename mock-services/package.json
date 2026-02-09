@@ -1,0 +1,36 @@
+{
+  "name": "mock-services",
+  "version": "1.0.0",
+  "description": "Mock services for media streaming, broadcasting, and analytics",
+  "type": "module",
+  "scripts": {
+    "streaming": "tsx streaming-api/server.ts",
+    "broadcast": "tsx broadcast-api/server.ts",
+    "analytics": "tsx analytics-service/server.ts",
+    "cdn": "tsx cdn-service/server.ts",
+    "all": "concurrently --kill-others-on-fail --handle-input \"pnpm run streaming\" \"pnpm run broadcast\" \"pnpm run analytics\" \"pnpm run cdn\"",
+    "dev": "concurrently --kill-others-on-fail --handle-input \"pnpm run streaming\" \"pnpm run broadcast\" \"pnpm run analytics\" \"pnpm run cdn\""
+  },
+  "keywords": [
+    "mock",
+    "streaming",
+    "broadcast",
+    "analytics",
+    "media",
+    "cdn"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.0",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
