@@ -2,6 +2,22 @@
 
 An AI-powered assistant for **StreamVerse**, a media streaming and broadcasting platform. This project demonstrates a modern AI backend architecture integrating **MCP (Model Context Protocol)**, **LangChain**, **Ollama**, and **RAG (Retrieval-Augmented Generation)** into a cohesive, production-style system.
 
+## Demo
+
+### Sample Task
+
+
+https://github.com/user-attachments/assets/a0bc0f4d-9ed2-4c5f-bc22-54f95ed5cb47
+
+
+
+### Connection & Knowledge Panel
+
+
+https://github.com/user-attachments/assets/3ee4a8a8-ac9b-4963-93d7-ab49b36d0df5
+
+
+
 ## Architecture
 
 ```mermaid
